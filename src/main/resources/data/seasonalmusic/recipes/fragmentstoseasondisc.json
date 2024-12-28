@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "#&#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:disc_fragment_5"
+    },
+    "&": {
+      "item": "minecraft:sunflower"
+    }
+  },
+  "result": {
+    "item": "seasonalmusic:seasondisc"
+  }
+}
