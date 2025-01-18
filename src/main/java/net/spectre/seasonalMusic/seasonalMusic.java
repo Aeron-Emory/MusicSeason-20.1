@@ -15,6 +15,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.spectre.seasonalMusic.item.ModItems;
+import net.spectre.seasonalMusic.sound.ModSounds;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -29,6 +30,7 @@ public class seasonalMusic {
         IEventBus modEventBus = context.getModEventBus();
 
         ModItems.register(modEventBus);
+        ModSounds.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

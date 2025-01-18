@@ -1,0 +1,10 @@
+{
+  "new_day": {
+    "sounds": [
+      {
+        "name": "seasonalmusic:new_day",
+        "stream": true
+      }
+    ]
+  }
+}
