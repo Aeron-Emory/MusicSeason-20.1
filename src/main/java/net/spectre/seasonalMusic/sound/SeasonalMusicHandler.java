@@ -1,6 +1,8 @@
 package net.spectre.seasonalMusic.sound;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.sounds.SoundInstance;
+import net.minecraft.client.sounds.SoundManager;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.level.Level;
 import sereneseasons.api.season.SeasonHelper;
@@ -10,6 +12,7 @@ import sereneseasons.api.season.ISeasonState;
 
 public class SeasonalMusicHandler {
     private static SoundEvent currentPlayingMusic = null;
+    private static SoundInstance currentSoundInstance = null;
 
     public static void playSeasonalMusic(Level world) {
 
@@ -33,7 +36,12 @@ public class SeasonalMusicHandler {
             };
 
             if (musicToPlay != null && musicToPlay != currentPlayingMusic) {
-                Minecraft.getInstance().player.playSound(musicToPlay, 1.0F, 1.0F);
+                SoundManager soundManager = Minecraft.getInstance().getSoundManager();
+                if (currentSoundInstance != null) {
+                    soundManager.stop(currentSoundInstance);
+                }
+                currentSoundInstance = net.minecraft.client.resources.sounds.SimpleSoundInstance.forMusic(musicToPlay);
+                soundManager.play(currentSoundInstance);
                 currentPlayingMusic = musicToPlay;
             }
         }
