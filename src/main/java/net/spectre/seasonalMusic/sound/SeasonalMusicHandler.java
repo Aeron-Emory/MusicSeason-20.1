@@ -1,8 +1,9 @@
 package net.spectre.seasonalMusic.sound;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.sounds.SoundInstance;
-import net.minecraft.client.sounds.SoundManager;
+import net.minecraft.client.sounds.MusicManager;
+import net.minecraft.core.Holder;
+import net.minecraft.sounds.Music;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.level.Level;
 import sereneseasons.api.season.SeasonHelper;
@@ -12,7 +13,6 @@ import sereneseasons.api.season.ISeasonState;
 
 public class SeasonalMusicHandler {
     private static SoundEvent currentPlayingMusic = null;
-    private static SoundInstance currentSoundInstance = null;
 
     public static void playSeasonalMusic(Level world) {
 
@@ -35,13 +35,21 @@ public class SeasonalMusicHandler {
                 default -> null;
             };
 
+            Holder<SoundEvent> musicToPlay2 = switch (currentSeason) {
+                case SPRING -> Holder.direct(ModSounds.NEW_DAY.get());
+                case SUMMER -> Holder.direct(ModSounds.APPLE_CIDER.get());
+                case AUTUMN -> Holder.direct(ModSounds.AUTUMN_MUSIC.get());
+                case WINTER -> Holder.direct(ModSounds.WINTER_COLD.get());
+                default -> null;
+            };
+
             if (musicToPlay != null && musicToPlay != currentPlayingMusic) {
-                SoundManager soundManager = Minecraft.getInstance().getSoundManager();
-                if (currentSoundInstance != null) {
-                    soundManager.stop(currentSoundInstance);
+                MusicManager musicManager = Minecraft.getInstance().getMusicManager();
+                if (currentPlayingMusic != null) {
+                    musicManager.stopPlaying();
                 }
-                currentSoundInstance = net.minecraft.client.resources.sounds.SimpleSoundInstance.forMusic(musicToPlay);
-                soundManager.play(currentSoundInstance);
+                Music music = new Music(musicToPlay2, 20, 20, true);
+                musicManager.startPlaying(music);
                 currentPlayingMusic = musicToPlay;
             }
         }
