@@ -14,6 +14,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.spectre.seasonalMusic.events.SeasonalMusicEventListener;
 import net.spectre.seasonalMusic.item.ModItems;
 import net.spectre.seasonalMusic.sound.ModSounds;
 import org.slf4j.Logger;
@@ -35,6 +36,7 @@ public class seasonalMusic {
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(SeasonalMusicEventListener.class);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

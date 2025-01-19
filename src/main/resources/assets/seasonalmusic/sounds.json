@@ -6,5 +6,29 @@
         "stream": true
       }
     ]
+  },
+  "winter_cold": {
+    "sounds": [
+      {
+        "name": "seasonalmusic:winter",
+        "stream": true
+      }
+    ]
+  },
+  "apple_cider": {
+    "sounds": [
+      {
+        "name": "seasonalmusic:apple_cider",
+        "stream": true
+      }
+    ]
+  },
+  "autumn_sound": {
+    "sounds": [
+      {
+        "name": "seasonalmusic:autumn_sound",
+        "stream": true
+      }
+    ]
   }
 }

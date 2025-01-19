@@ -42,7 +42,6 @@ minecraft {
     // It is REQUIRED to be set to true for this template to function.
     // See https://docs.gradle.org/current/dsl/org.gradle.language.jvm.tasks.ProcessResources.html
     copyIdeResources = true
-
     // When true, this property will add the folder name of all declared run configurations to generated IDE run configurations.
     // The folder name can be set on a run configuration using the "folderName" property.
     // By default, the folder name of a run configuration is the name of the Gradle project containing it.
@@ -85,11 +84,18 @@ minecraft {
         client {
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', mod_id
+            //testing only
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
+
         }
 
         server {
             property 'forge.enabledGameTestNamespaces', mod_id
             args '--nogui'
+            //testing only
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
         }
 
         // This run config launches GameTestServer and runs all registered gametests, then exits.
@@ -115,7 +121,9 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 repositories {
     // Put repositories for dependencies here
     // ForgeGradle automatically adds the Forge maven and Maven Central for you
-
+    maven {
+        url = 'https://maven.minecraftforge.net/'
+    }
     // If you have mod jar dependencies in ./libs, you can declare them as a repository like so.
     // See https://docs.gradle.org/current/userguide/declaring_repositories.html#sub:flat_dir_resolver
     // flatDir {
@@ -130,6 +138,10 @@ dependencies {
     // If the group id is "net.minecraft" and the artifact id is one of ["client", "server", "joined"],
     // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+
+    // Add Serene Seasons as a dependency
+    implementation fg.deobf("com.github.glitchfiend:SereneSeasons-forge:1.20.1-9.1.0.0")
+    implementation fg.deobf("com.github.glitchfiend:GlitchCore-forge:1.20.1-0.0.1.1")
 
     // Example mod dependency with JEI - using fg.deobf() ensures the dependency is remapped to your development mappings
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
