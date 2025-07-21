@@ -12,7 +12,7 @@ import sereneseasons.api.season.ISeasonState;
 
 
 public class SeasonalMusicHandler {
-    private static SoundEvent currentPlayingMusic = null;
+    private static Holder<SoundEvent> currentPlayingMusic = null;
 
     public static void playSeasonalMusic(Level world) {
 
@@ -27,15 +27,15 @@ public class SeasonalMusicHandler {
             Season currentSeason = seasonState.getSeason();
 
             // Play music based on the season
-            SoundEvent musicToPlay = switch (currentSeason) {
-                case SPRING -> ModSounds.NEW_DAY.get();
-                case SUMMER -> ModSounds.APPLE_CIDER.get();
-                case AUTUMN -> ModSounds.AUTUMN_MUSIC.get();
-                case WINTER -> ModSounds.WINTER_COLD.get();
-                default -> null;
-            };
+//            SoundEvent musicToPlay = switch (currentSeason) {
+//                case SPRING -> ModSounds.NEW_DAY.get();
+//                case SUMMER -> ModSounds.APPLE_CIDER.get();
+//                case AUTUMN -> ModSounds.AUTUMN_MUSIC.get();
+//                case WINTER -> ModSounds.WINTER_COLD.get();
+//                default -> null;
+//            };
 
-            Holder<SoundEvent> musicToPlay2 = switch (currentSeason) {
+            Holder<SoundEvent> musicToPlay = switch (currentSeason) {
                 case SPRING -> Holder.direct(ModSounds.NEW_DAY.get());
                 case SUMMER -> Holder.direct(ModSounds.APPLE_CIDER.get());
                 case AUTUMN -> Holder.direct(ModSounds.AUTUMN_MUSIC.get());
@@ -45,10 +45,8 @@ public class SeasonalMusicHandler {
 
             if (musicToPlay != null && musicToPlay != currentPlayingMusic) {
                 MusicManager musicManager = Minecraft.getInstance().getMusicManager();
-                if (currentPlayingMusic != null) {
-                    musicManager.stopPlaying();
-                }
-                Music music = new Music(musicToPlay2, 20, 20, true);
+                musicManager.stopPlaying();
+                Music music = new Music(musicToPlay, 20, 20, true);
                 musicManager.startPlaying(music);
                 currentPlayingMusic = musicToPlay;
             }
