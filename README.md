@@ -22,9 +22,9 @@ during a change in season.
   - Can be crafted using `Disc Fragment 5` and a `Sunflower`.
 
 ### Custom Sounds
-- *New Day*  
-- *Winter Cold*  
-- *Apple Cider*  
+- *ꓘnave - New Day*  
+- *ꓘnave - Winter Cold*  
+- *Zane Little - Apple Cider*  
 - *Autumn Sound*
 
 ---
