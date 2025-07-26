@@ -49,6 +49,8 @@ public class seasonalMusic {
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.SUMMER_DISC);
             event.accept(ModItems.SPRING_DISC);
+            event.accept(ModItems.AUTUMN_DISC);
+            event.accept(ModItems.WINTER_DISC);
         }
     }
 

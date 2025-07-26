@@ -19,6 +19,12 @@ public class ModItems {
     public static final RegistryObject<Item> SPRING_DISC = ITEMS.register("springdisc",
             () -> new RecordItem(6, ModSounds.NEW_DAY, new Item.Properties().stacksTo(1), 5200));
 
+    public static final RegistryObject<Item> AUTUMN_DISC = ITEMS.register("autumndisc",
+            () -> new RecordItem(6, ModSounds.AUTUMN_MUSIC, new Item.Properties().stacksTo(1), 1320));
+
+    public static final RegistryObject<Item> WINTER_DISC = ITEMS.register("winterdisc",
+            () -> new RecordItem(6, ModSounds.WINTER_COLD, new Item.Properties().stacksTo(1), 380));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

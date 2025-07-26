@@ -1,6 +1,8 @@
 {
   "values": [
     "seasonalmusic:springdisc",
-    "seasonalmusic:summerdisc"
+    "seasonalmusic:summerdisc",
+    "seasonalmusic:autumndisc",
+    "seasonalmusic:winterdisc"
   ]
 }
