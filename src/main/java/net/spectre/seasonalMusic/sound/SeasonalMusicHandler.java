@@ -29,7 +29,6 @@ public class SeasonalMusicHandler {
         if (player != null) {
             Holder<Biome> biomeHolder = player.level().getBiome(player.blockPosition());
             Biome biome = biomeHolder.value();
-            Boolean X = player.isUnderWater();
         }
 
             if (seasonState != null) {

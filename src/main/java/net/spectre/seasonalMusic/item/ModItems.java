@@ -13,8 +13,8 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, seasonalMusic.MOD_ID);
 
-    public static final RegistryObject<Item> SEASON_DISC = ITEMS.register("seasondisc",
-            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SUMMER_DISC = ITEMS.register("summerdisc",
+            () -> new RecordItem(6, ModSounds.APPLE_CIDER, new Item.Properties().stacksTo(1), 3980));
 
     public static final RegistryObject<Item> SPRING_DISC = ITEMS.register("springdisc",
             () -> new RecordItem(6, ModSounds.NEW_DAY, new Item.Properties().stacksTo(1), 5200));
