@@ -3,7 +3,7 @@
 ![Minecraft](https://img.shields.io/badge/Minecraft-1.20.1-brightgreen)
 ![Forge](https://img.shields.io/badge/Forge-47.3.12-blue)
 
-**Seasonal Music** is a Forge mod that enhances your Minecraft experience by adding **season-based ambient music** and **new music discs**. It integrates with [Serene Seasons](https://github.com/Glitchfiend/SereneSeasons) to bring **music that changes with the seasons** provided by Serene seasons.
+**Seasonal Music** is a Forge mod that enhances your Minecraft experience by adding **season-based ambient music** and **new music discs**. It integrates with [Serene Seasons](https://github.com/Glitchfiend/SereneSeasons) to bring **music that changes with the seasons** provided by Serene seasons. 
 More features are on the work, like biome based changes. weather based changes. But, those are still underwork. Currently the mod only playes the music once
 during a change in season.
 
@@ -12,19 +12,19 @@ during a change in season.
 ## Features
 
 ### Seasonal Music Playback
-- Plays **different music tracks depending on the current season** (spring, summer, autumn, winter).
+- Plays **different music tracks depending on the current season** (spring, summer, autumn, winter).  
 - Integrates with **Serene Seasons** to detect and react to the in-game season.
 
 ### 💿 New Music Discs
-- **Seasonal Disc** – A base item used for seasonal music themes.
+- **Seasonal Disc** – A base item used for seasonal music themes.  
 - **Disc of Spring** – Plays *ꓘnave - New Day*
-    - Obtainable as a rare creeper drop.
-    - Can be crafted using `Disc Fragment 5` and a `Sunflower`.
+  - Obtainable as a rare creeper drop.  
+  - Can be crafted using `Disc Fragment 5` and a `Sunflower`.
 
 ### Custom Sounds
-- *ꓘnave - New Day*
-- *ꓘnave - Winter Cold*
-- *Zane Little - Apple Cider*
+- *ꓘnave - New Day*  
+- *ꓘnave - Winter Cold*  
+- *Zane Little - Apple Cider*  
 - *Autumn Sound*
 
 ---
@@ -51,5 +51,6 @@ during a change in season.
 ---
 
 ## Authors
-- **Spectre**
+- **Spectre**  
 - **Knave**
+
