@@ -16,10 +16,10 @@ during a change in season.
 - Integrates with **Serene Seasons** to detect and react to the in-game season.
 
 ### 💿 New Music Discs
-- **Seasonal Disc** – A base item used for seasonal music themes.  
+- **Disc of Summer** – Plays *Zane Little - Apple Cider*
 - **Disc of Spring** – Plays *ꓘnave - New Day*
-  - Obtainable as a rare creeper drop.  
-  - Can be crafted using `Disc Fragment 5` and a `Sunflower`.
+  - Obtainable as a rare creeper drop.
+  - Can be crafted using `Disc Fragment 5` and a `Sunflower` or `Flint and Steel`. (This will be removed later)
 
 ### Custom Sounds
 - *ꓘnave - New Day*
@@ -44,9 +44,9 @@ during a change in season.
 ---
 
 ## How It Works
-- The mod listens for **world tick events** and checks the current season using **Serene Seasons API**.
+- The mod listens for world tick events and checks the current season using Serene Seasons API.
 - When the season changes, it plays music fitting for that season.
-- Collect **new music discs** to enjoy custom tracks in your jukebox!
+- New music discs to play new tracks in the jukebox
 
 ---
 
